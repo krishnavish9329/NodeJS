@@ -1,0 +1,14 @@
+{
+    "name": "node-js-revetion",
+    "version": "1.0.0",
+    "description": "",
+    "main": "1Day.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "figlet": "^1.7.0"
+    }
+  }
