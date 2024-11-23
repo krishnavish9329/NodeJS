@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=">
+    <title>show form</title>
+</head>
+<body>
+    <% if(data.length > 0) {%>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>Monum</th>
+        </tr>
+
+        <% for(let i =0 ;i<data.length; i++) { %>
+        <tr>
+            <td><%- data[i].id %></td>
+            <td><%- data[i].name %></td>
+            <td><%- data[i].monum %></td>
+        </tr>
+        <% } %>
+    </table>
+    <%} else {%>
+        <h>no data</h>
+    <% }%>
+</body>
+</html>
