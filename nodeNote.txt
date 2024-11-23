@@ -1,0 +1,1488 @@
+*** All Note of Node JS ***
+
+Q1) What is Node Js And why we used it?
+Ans) Node.js is an open-source, cross-platform runtime environment that allows developers to run JavaScript code on the server side, outside of a web browser. It uses the V8 JavaScript engine, which is the same engine that powers Google Chrome, to execute code efficiently. Node.js is widely used for building scalable, high-performance network applications.
+
+Key Features of Node.js:
+* Asynchronous and Event-Driven:-
+Node.js uses non-blocking, event-driven architecture, making it efficient and suitable for real-time applications. This means that I/O operations (like reading from the database, network requests) are handled asynchronously, allowing the server to handle multiple operations concurrently.
+
+* Single-Threaded:-
+Although Node.js is single-threaded, it leverages an event loop to manage multiple client requests without creating a new thread for each request. This makes it memory-efficient and capable of handling a large number of simultaneous connections.
+
+* Fast Execution:-
+Node.js is built on the V8 JavaScript engine, which compiles JavaScript into machine code. This results in fast execution of code.
+
+* NPM (Node Package Manager):-
+Node.js comes with npm, a robust package manager that hosts a vast repository of open-source packages and modules. Developers can easily install and manage these packages to extend the functionality of their applications.
+
+* Cross-Platform:-
+Node.js is cross-platform, meaning it can run on various operating systems, including Windows, macOS, and Linux.
+
+Common Use Cases for Node.js:
+
+* Real-Time Applications:-
+Chat applications, online gaming, collaboration tools, and live-streaming platforms benefit from Node.js's real-time, low-latency capabilities.
+
+* APIs and Microservices:-
+Node.js is often used to build RESTful APIs and microservices due to its lightweight and efficient nature.
+
+* Single-Page Applications (SPAs):-
+Node.js is ideal for building SPAs, where the application dynamically updates content without refreshing the entire page.
+
+* IoT Applications:-
+Its lightweight and event-driven nature make Node.js suitable for handling data streams from IoT devices. 
+-----------------------------------------------------------------------------------------------------------
+
+2) what is cleant side and server side Javascript?
+Ans)Client-Side JavaScript:-
+Client side JavaScript runs on the user's browser. It is mainly used for:
+Interactivity:- Enhancing the user experience by making web pages interactive (e.g., form validation, dynamic content updates).
+DOM Manipulation:- Modifying the HTML and CSS of a web page to update the user interface without reloading the page.
+Event Handling:- Responding to user actions such as clicks, mouse movements, and keyboard inputs.
+AJAX Calls:- Making asynchronous requests to the server to fetch or send data without refreshing the page.
+
+Server-Side JavaScript:
+Server-side JavaScript runs on the server. It is used for:
+Backend Logic:- Handling the core logic of the application, such as processing requests, business logic, and accessing databases.
+Data Handling:- Interacting with databases to retrieve, store, and manipulate data.
+Authentication and Authorization:- Managing user authentication and access control.
+Serving Content:- Generating and serving HTML content to the client based on the request.
+-----------------------------------------------------------------------------------------------------------
+
+3) what develop make with Node js?
+ans) Real-Time Applications
+* Chat Applications: Node.js is ideal for building real-time chat applications due to its event-driven, non-blocking architecture.
+Example: Slack-like messaging platforms.
+
+* Live Streaming: Applications that require live video or audio streaming.
+Example: Video conferencing tools and live broadcasting platforms.
+
+Web Servers and APIs
+* RESTful APIs: Node.js is frequently used to build RESTful APIs due to its lightweight nature and ability to handle multiple requests efficiently.
+Example: Backend services for mobile and web applications.
+
+* GraphQL APIs: Node.js can be used to create flexible and efficient GraphQL APIs.
+Example: Data fetching and manipulation for complex applications.
+
+Single-Page Applications (SPAs)
+* Dynamic Web Applications: Node.jsis suitable for building SPAs that require frequent updates without reloading the entire page.
+Example: Social media platforms, project management tools.
+
+Microservices Architecture
+* Microservices: Node.js is often used to develop microservices that break down complex applications into smaller, manageable services.
+Example: E-commerce platforms with separate services for user management, inventory, and payments.
+
+IoT Applications
+* Internet of Things (IoT): Node.jscan handle a large number of concurrent connections, making it suitable for IoT applications that require real-time data processing.
+Example: Smart home systems, industrial IoT solutions.
+
+E-Commerce Platforms
+* Online Stores: Node.jscan be used to build scalable and efficient e-commerce platforms.
+Example: Shopping websites with real-time inventory updates.
+
+Task Runners and Automation Tools
+* Automation: Developers create scripts and tools for automating repetitive tasks.
+Example: Build and deployment automation tools.
+
+Command-Line Tools
+* CLI Applications: Node.jsis used to build command-line tools that simplify development processes.
+Example: Project scaffolding tools, automation scripts.
+
+Content Management Systems (CMS)
+* CMS: Developers build content management systems that provide an interface for managing website content.
+Example: Custom CMS platforms tailored to specific business needs.
+
+Real-Time Collaboration Tools
+* Collaborative Applications: Node.jsis ideal for building applications that require real-time collaboration.
+Example: Collaborative document editing tools, virtual whiteboards.
+-----------------------------------------------------------------------------------------------------------
+
+4) what is Global Object?
+ans)  window object is not exist in NODE js envorment .It exist in browser only  hera is Gobal Object
+
+-----------------------------------------------------------------------------------------------------------
+
+5) What is Modules and modularity?
+ans) A module is like a small, self-contained piece of a larger program. Think of it as a building block that contains specific functions or data, which can be used and reused in different parts of the application. By breaking a program into modules, it's easier to manage, understand, and maintain.
+
+Types of Modules:
+* Core Modules: Built-in modules provided by the platform (e.g., Node.js) that offer basic functionalities like file system operations, HTTP requests, and more.
+
+* Local Modules: Custom modules created by the developer to encapsulate specific functionality within their application. 
+
+* Third-Party Modules: Modules created by other developers and distributed via package managers like npm. These modules can be easily included in your project. like mongooes, express, body-perser
+-----------------------------------------------------------------------------------------------------------
+
+6) what is Global and Local module?
+Ans) Global Modules
+Global modules are modules that are installed and can be used anywhere on your system, rather than just within a specific project. These are typically installed using the -g flag with npm (Node Package Manager).
+
+Characteristics:
+System-Wide Access: Once installed, global modules are available from any project on your system.
+Use Cases: Commonly used for tools that you run from the command line, such as nodemon, eslint, or npm.
+
+Local Modules
+Local modules are modules that are installed within a specific project directory. They are only accessible within that project.
+
+Characteristics:
+Project-Specific: Installed within the node_modules directory of a specific project.
+Use Cases: Used for libraries and dependencies that your project needs, such as express, lodash, etc.
+-----------------------------------------------------------------------------------------------------------
+
+7) what is Child Process modules ?
+And) child process is a node module to creat sub process within a script
+you can perform different tasks withis your script by using some method
+ 
+/*such as write in cmp sortcut like 
+calc -> to open to calaculeter 
+start chrome -> open to chrome
+etc
+*/
+
+const cp = require('child_process');
+
+//cp.execSync('calc');  // this comdant is open the calculater
+//cp.execSync('start chrome');  // this comdant is open the chrome
+//cp.execSync('start chrome  [link of wed side]');  // this comdant is open the wedside
+-----------------------------------------------------------------------------------------------------------
+
+8) what is Os module ?
+ans)OS modules is use to chack and access the Operation Syste .
+console.log("os module__________-")
+
+const os = require('os');
+console.log(os.platform());
+console.log(os.arch())
+console.log(os.totalmem()/(1024*1024*1024))
+console.log(os.freemem()/(1024*1024))
+console.log(os.userInfo())
+
+
+console.log("----------------------")
+console.log(os.cpus()) // it's return information of cpu
+console.log(os.networkInterfaces())// it's return information of network
+
+-----------------------------------------------------------------------------------------------------------
+
+9) Path Module 
+ans) path module is help us to path of specific folder or file
+ it's used where we find the path or directory from a specific file or folder
+
+* path.dirname(path)   :Returns the directory name of a path.
+* path.extname(path)   :Returns the extension of the path.
+* path.join([...paths]) : Joins all given path segments together using the platform-specific separator as a delimiter, and normalizes the resulting path.
+-----------------------------------------------------------------------------------------------------------
+
+10) fs(file System) module
+ans) fs is use to perform the CURD(creat , update ,read , delete ) operation 
+ 
+ const fs =require('fs');
+
+fs.writeFileSync('t1.txt',"Hello I am first txt file\nt1.txt",);
+// it creat a floder and when file is all ready exist so over write the new data
+// when use it's comment th file have all ready store privious data will be over write new data
+
+const read_date =fs.readFileSync('t1.txt')
+console.log(read_date); // we have got the data in Buffer form so conver to into String 
+console.log("this is t1.txt data -> "  + read_date) // we concate Buffer data to into String 
+
+fs.appendFileSync('t3.txt',"\nHello I am t1 created by Krishna",)
+
+fs.unlinkSync('t3.txt');
+// delete the t3.txt file
+
+-----------------------------------------------------------------------------------------------------------
+
+11) what is npm 
+ans) npm stands for Node Package Manager. It's a tool that helps developers manage and share packages (libraries or pieces of code) for their Node.js projects. Think of it as a library where you can find and include various tools to build your applications more efficiently.
+
+Types of npm Packages:
+* Local Packages:
+Installed within a specific project.
+Used only in that project.
+Installed with:
+
+npm install <package-name>
+
+* Global Packages:
+Installed globally on your system.
+Can be used across different projects.
+Installed with:
+
+npm install -g <package-name>
+
+
+-----------------------------------------------------------------------------------------------------------
+
+12) what is Express JS ?
+Ans) Express.js is a fast, minimalist web framework for Node.js that simplifies the process of building web applications and APIs. It provides a robust set of features to develop web and mobile applications and is known for its performance, simplicity, and flexibility.
+
+Express is server side (Backend) language 
+it is actualy is a fremwork of Node
+Node Js is runtime envorment of js 
+ 
+Key Features of Express.js:
+1) fast and rabust application
+
+2) Routing: Express.jsprovides a powerful routing mechanism to handle different HTTP requests (GET, POST, PUT, DELETE, etc.) and define URL patterns.
+3) Middleware: Middleware functions in Express.jscan process requests and responses at various stages in the application's lifecycle. This makes it easy to handle tasks such as logging, authentication, parsing request bodies, and more.
+4) Template Engines: Express.jssupports various template engines, enabling dynamic content generation for web pages.
+5) Error Handling: Provides a built-in mechanism to handle errors in the application efficiently.
+6) Flexibility: Minimalist and unopinionated, allowing developers to structure their applications as they see fit.
+7) Compatibility: Works seamlessly with other Node.js modules and packages.
+
+Example:
+
+const express = require('express');
+const app =express();
+ 
+app.get('/',(req,res)=>{
+    res.send("I'm Krishna");
+})
+app.listen(3000);
+
+
+app.get('/courses/:id',(req,res)=>{
+    console.log(req.params.id)
+    res.send(req.params.id);
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+13) what is Nodemon ?
+ans) Nodemon is a utility that helps with developing Node.js applications by automatically restarting the Node application when file changes in the directory are detected. It's a tool that simplifies the development workflow by removing the need to manually restart the server every time you make a change to your code.
+
+Key Features of Nodemon:
+* Automatic Restart: Nodemon watches for changes in your project files and automatically restarts your Node.jsapplication when a change is detected.
+
+* Customization: You can configure Nodemon to watch additional directories or files, ignore specific files, and delay restarts.
+
+* Ease of Use: It's straightforward to install and use, making it a popular choice for Node.jsdevelopers.
+
+ installaton of Nodemon using npm i nodemon
+ use it using nodemon {name of js file}.js
+
+---------------------------------------------------------------------------------------------------------------
+
+14) What is server?
+Ans) A server is a computer system or software application that provides services, resources, or data to other computers, known as clients, over a network. Servers are essential components in a network, enabling various functionalities and interactions between clients and services. Here’s a more detailed look at what servers do:
+
+Types of Servers:
+1) Web Server: Hosts websites and delivers web pages to clients (browsers) over the Internet. Common web servers include Apache, Nginx, and Microsoft IIS.
+Example: When you visit a website, your browser makes a request to the web server, which then sends back the requested web page.
+
+2) File Server: Stores and manages files, allowing clients to upload, download, and share files across a network.
+Example: File servers are commonly used in businesses to store documents, images, and other files that need to be accessed by multiple users.
+
+3) Database Server: Provides database services to other computer programs or devices. It stores and retrieves data as requested by the clients.
+Example: SQL servers like MySQL, PostgreSQL, and Microsoft SQL Server manage and serve data for applications like websites and enterprise systems.
+
+4) Email Server: Manages and delivers email messages. It handles tasks like sending, receiving, and storing emails.
+Example: Email servers like Microsoft Exchange and Gmail’s servers ensure that emails are correctly delivered to recipients.
+
+5) Application Server: Hosts and runs applications, providing business logic for application programs through various protocols.
+Example: Application servers like Tomcat and JBoss are used to deploy web applications and services.
+
+6) Proxy Server: Acts as an intermediary between a client and another server, often used for anonymity, security, or load balancing.
+Example: Proxy servers can cache web pages to reduce bandwidth usage and improve load times for frequently accessed sites.
+
+Key Characteristics of Servers:
+1) Always On: Servers are typically designed to run continuously, providing services 24/7.
+2)High Performance: Servers are built to handle multiple requests simultaneously and have higher processing power, memory, and storage compared to typical client computers.
+3) Scalability: Servers can be scaled up by adding more resources or scaled out by adding more server instances to handle increased load.
+4) Reliability and Redundancy: Servers often have redundancy built in to ensure high availability and minimal downtime.
+
+Example Use Case:
+Imagine a company with employees who need to access shared resources, manage data, and communicate via email. The company might use:
+
+A file server to store and share documents.
+
+A database server to manage customer information and business data.
+
+An email server to handle internal and external email communication.
+
+A web server to host the company’s website.
+
+By using these servers, the company ensures that its employees can collaborate efficiently, access necessary information, and communicate effectively.
+
+Servers are fundamental to the operation of modern networks and the Internet, providing the backbone for many services and applications we rely on every day.
+
+---------------------------------------------------------------------------------------------------------------
+
+15) What is HTTP?
+Ans) HTTP (HyperText Transfer Protocol) is the foundational protocol used for transmitting data on the World Wide Web. It facilitates the exchange of information between a client (like a web browser) and a server. HTTP defines how messages are formatted and transmitted, and it also determines how servers and browsers should respond to various commands.
+
+HTTP Methods
+HTTP methods are the different types of requests that a client can make to a server. They define the desired action to be performed on a resource. Here are the main HTTP methods commonly used in Node.js:
+
+GET:
+Purpose: Retrieve data from a server.
+Example: Fetching user data from an API.
+javascript
+app.get('/users', (req, res) => {
+    res.send('Fetching users');
+});
+
+POST:
+Purpose: Submit data to be processed by the server, often resulting in a new resource being created.
+Example: Creating a new user.
+javascript
+app.post('/users', (req, res) => {
+    res.send('Creating a user');
+});
+
+PUT:
+Purpose: Update an existing resource with the provided data.
+Example: Updating user data.
+javascript
+app.put('/users/:id', (req, res) => {
+    res.send(`Updating user with ID ${req.params.id}`);
+});
+
+DELETE:
+Purpose: Remove a specified resource.
+Example: Deleting a user.
+javascript
+app.delete('/users/:id', (req, res) => {
+    res.send(`Deleting user with ID ${req.params.id}`);
+});
+
+PATCH:
+Purpose: Apply partial modifications to a resource.
+Example: Updating part of user data.
+javascript
+app.patch('/users/:id', (req, res) => {
+    res.send(`Partially updating user with ID ${req.params.id}`);
+});
+
+OPTIONS:
+Purpose: Describe the communication options for the target resource. Often used in CORS (Cross-Origin Resource Sharing) preflight requests.
+Example:
+javascript
+app.options('/users', (req, res) => {
+    res.send('Options request for /users');
+});
+
+Using HTTP Methods in Node.js with Express
+Express.js, a popular web framework for Node.js, makes it easy to handle different HTTP methods. Here’s an example of how to set up a simple Express server and define routes for various HTTP methods:
+
+Step-by-Step Example:
+Install Express:
+
+npm install express
+Create a file named app.js and set up the server:
+
+javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+// GET request
+app.get('/users', (req, res) => {
+    res.send('Fetching users');
+});
+
+// POST request
+app.post('/users', (req, res) => {
+    res.send('Creating a user');
+});
+
+// PUT request
+app.put('/users/:id', (req, res) => {
+    res.send(`Updating user with ID ${req.params.id}`);
+});
+
+// DELETE request
+app.delete('/users/:id', (req, res) => {
+    res.send(`Deleting user with ID ${req.params.id}`);
+});
+
+// PATCH request
+app.patch('/users/:id', (req, res) => {
+    res.send(`Partially updating user with ID ${req.params.id}`);
+});
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+});
+
+Run the server: Open your terminal, navigate to the directory where app.js is located, and run:
+
+node app.js
+
+-----------------------------------------------------------------------------------------------------------
+
+16)  what  is Environement variables & PORT ?
+Ans) Environment variables are dynamic values that can influence the behavior of software applications. They are commonly used to configure various aspects of a system or application without changing the code. In the context of Node.js, environment variables can store sensitive information like database credentials, API keys, or configuration settings.
+
+USE:
+
+const port = process.env.port||3000;
+app.listen(3000,()=>console.log(`port is running on ${port}`))
+
+-----------------------------------------------------------------------------------------------------------
+
+17) what is middlewear?
+Ans) Middleware in the context of web development, particularly with frameworks like Express.js in Node.js, refers to functions that execute during the lifecycle of a request to the server. These functions have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle. Essentially, middleware can be thought of as the glue that connects various pieces of your application, enabling modular and reusable code.
+
+Key Functions of Middleware:
+1) Request and Response Manipulation: Middleware can modify the req and res objects, making it possible to implement functionalities like parsing request bodies, setting response headers, etc.
+2) Route Handling: Middleware can define routes and their corresponding handlers.
+3) Execution Control: Middleware functions can terminate the request-response cycle or pass control to the next middleware function using next().
+4) Error Handling: Specialized middleware can catch and handle errors within the application.
+
+Types of Middleware:
+1) Application-Level Middleware: Applied to the entire application or to specific routes.
+2) Router-Level Middleware: Works at the router level, used to modularize routes in an Express app.
+3) Error-Handling Middleware: Special middleware for capturing and handling errors.
+4) Built-In Middleware: Middleware functions provided by frameworks like Express.
+5) Third-Party Middleware: Middleware provided by third-party packages available via npm.
+
+Example of Middleware in Express.js:
+Let's look at an example to understand how middleware works in Express:
+
+javascript
+const express = require('express');
+const app = express();
+
+// Application-level middleware
+app.use((req, res, next) => {
+    console.log('Request URL:', req.originalUrl);
+    next();
+});
+
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+// Route-level middleware
+app.get('/user/:id', (req, res, next) => {
+    console.log('Request Type:', req.method);
+    next();
+}, (req, res, next) => {
+    res.send('USER');
+});
+
+// Error-handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000');
+});
+In this example:
+
+Application-Level Middleware logs the request URL.
+
+Middleware for parsing JSON bodies is provided by Express.
+
+Route-Level Middleware logs the request type and sends a response for the /user/:id route.
+
+Error-Handling Middleware catches and handles errors, sending a 500 status code and a message.
+
+Middleware is a powerful concept that helps in structuring and managing the flow of requests within an application, making the codebase more modular, maintainable, and scalable.
+
+----------------------------------------------------------------------------------------------------------------
+
+18) What is costom middlewear?
+ans) Custom middleware in Node.js, particularly with Express.js, is a function that you define yourself to handle specific tasks within your application. This middleware function can perform various operations such as modifying the request and response objects, handling authentication, logging, error handling, or any other functionality you need before passing control to the next middleware function or route handler.
+
+Why Use Custom Middleware?
+Custom middleware allows you to:
+
+* Encapsulate Reusable Logic: Write reusable functions to handle common tasks across multiple routes.
+* Maintain Clean Code: Keep your route handlers clean and focused on their primary responsibilities.
+* Implement Cross-Cutting Concerns: Manage concerns like logging, authentication, and error handling consistently across your application.
+
+Creating Custom Middleware
+Here's a basic example of creating and using custom middleware in an Express.js application:
+
+Step-by-Step Example:
+Create a Basic Express Application: First, make sure you have Express installed in your project:
+
+sh
+npm install express
+Define Custom Middleware: Create a file named app.js and add the following code:
+
+javascript
+const express = require('express');
+const app = express();
+
+// Custom middleware function to log request details
+const logRequestDetails = (req, res, next) => {
+    console.log(`Request Method: ${req.method}, URL: ${req.url}`);
+    next(); // Pass control to the next middleware function or route handler
+};
+
+// Apply the custom middleware to all routes
+app.use(logRequestDetails);
+
+// Define a simple route
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+// Start the server
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+Run the Application: Open your terminal, navigate to the directory containing app.js, and run:
+
+sh
+node app.js
+Explanation:
+Define Middleware Function: The logRequestDetails function logs the request method and URL. It then calls next() to pass control to the next middleware function or route handler.
+
+Use Middleware: The app.use(logRequestDetails) line applies this middleware function to all incoming requests.
+
+Define Routes: The app.get('/') route handler sends a "Hello, World!" response.
+
+Start Server: The server listens on the specified port, logging that it is running.
+
+------------------------------------------------------------------------------------------------------------------
+
+19) what is third party middlewear?
+Ans) Third-party middleware in Node.js, specifically with Express.js, refers to middleware functions created and maintained by the developer community or companies, rather than being part of the core framework. These middleware packages are designed to solve common problems, provide additional functionality, or enhance the development process, and are typically available via npm (Node Package Manager).
+
+Common Uses of Third-Party Middleware:
+* Request Parsing: Middleware for parsing incoming request bodies, such as JSON, URL-encoded data, or multipart forms.
+* Authentication: Middleware for handling user authentication and authorization.
+* Logging: Middleware for logging requests and responses.
+* Security: Middleware for enhancing the security of your application (e.g., setting HTTP headers, rate limiting).
+* Session Management: Middleware for handling user sessions and cookies.
+* CORS: Middleware for enabling Cross-Origin Resource Sharing.
+
+Examples of Popular Third-Party Middleware:
+1. Body-Parser:
+Used for parsing incoming request bodies.
+
+sh
+npm install body-parser
+javascript
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json()); // Parses JSON bodies
+app.use(bodyParser.urlencoded({ extended: true })); // Parses URL-encoded bodies
+
+2. Morgan:
+Used for logging HTTP requests.
+
+sh
+npm install morgan
+javascript
+
+const morgan = require('morgan');
+app.use(morgan('combined')); // Logs requests in the 'combined' format
+
+3. Helmet:
+Used for securing Express apps by setting various HTTP headers.
+
+sh
+npm install helmet
+javascript
+
+const helmet = require('helmet');
+app.use(helmet()); // Adds security-related headers
+
+4. Express-Session:
+Used for managing sessions.
+
+sh
+npm install express-session
+javascript
+
+const session = require('express-session');
+app.use(session({
+    secret: 'mySecretKey',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+}));
+
+5. Cors:
+Used to enable Cross-Origin Resource Sharing (CORS).
+
+sh
+npm install cors
+javascript
+
+const cors = require('cors');
+app.use(cors()); // Enables CORS for all routes
+Example of Using Third-Party Middleware:
+Here’s a simple example demonstrating the use of some third-party middleware in an Express application:
+
+javascript
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const helmet = require('helmet');
+const session = require('express-session');
+const cors = require('cors');
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Use third-party middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan('combined'));
+app.use(helmet());
+app.use(session({
+    secret: 'mySecretKey',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+}));
+app.use(cors());
+
+// Define a simple route
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+
+In this example:
+bodyParser: Parses JSON and URL-encoded request bodies.
+morgan: Logs HTTP requests in the 'combined' format.
+helmet: Adds various security headers to the responses.
+session: Manages user sessions.
+cors: Enables Cross-Origin Resource Sharing.
+
+Third-party middleware enhances the capabilities of your Express application by providing additional features and tools that simplify development and improve security, performance, and maintainability.
+
+------------------------------------------------------------------------------------------------------------------
+
+20) what is synchronous js and asyncronous js ?
+Ans) * Synchronous JavaScript
+Synchronous JavaScript means that code is executed sequentially, one statement at a time. Each operation must complete before the next operation can start. This can be simple to understand and work with, but it can also lead to blocking behavior, where a long-running operation (such as a network request or a file read) can prevent the execution of subsequent code until it completes.
+
+Example:
+javascript
+console.log('First');
+console.log('Second');
+console.log('Third');
+
+In this example, the messages are logged in the order they appear in the code: "First", "Second", "Third".
+
+* Asynchronous JavaScript
+Asynchronous JavaScript allows multiple operations to run concurrently. Instead of waiting for an operation to complete, the program can continue executing other code, and then return to the asynchronous operation once it completes. This is achieved using callbacks, promises, and the async/await syntax.
+
+Example with Callbacks:
+javascript
+console.log('First');
+
+setTimeout(() => {
+    console.log('Second');
+}, 2000);
+
+console.log('Third');
+
+In this example, "First" is logged immediately, then "Third". After a 2-second delay, "Second" is logged. The setTimeout function is asynchronous, so it doesn't block the execution of the next line.
+
+Example with Promises:
+javascript
+
+console.log('First');
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Second');
+    }, 2000);
+});
+
+promise.then((message) => {
+    console.log(message);
+});
+
+console.log('Third');
+Here, "First" and "Third" are logged immediately. After 2 seconds, the promise resolves and logs "Second".
+
+Example with Async/Await:
+javascript
+console.log('First');
+
+const asyncFunction = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log('Second');
+};
+
+asyncFunction();
+
+console.log('Third');
+Again, "First" and "Third" are logged immediately. After 2 seconds, "Second" is logged.
+
+Key Differences
+Synchronous JavaScript	    Asynchronous JavaScript
+Executes code sequentially	Executes code concurrently
+Can block subsequent code	Does not block subsequent code
+Simple to understand     	Requires understanding of callbacks, promises, or async/await
+
+When to Use Each
+Synchronous code is useful when operations need to happen in a strict order and blocking behavior is acceptable.
+
+Asynchronous code is essential for tasks that take time to complete, such as network requests, file I/O, and timers, ensuring that other code can run without waiting for these tasks to finish.
+
+Understanding the difference between synchronous and asynchronous JavaScript is crucial for writing efficient and responsive applications, especially in a web development context where non-blocking behavior is often required. 
+
+--------------------------------------------------------------------------------------------------------------------
+
+21) what is Handling routes?
+Ans) Handling routes refers to the process of defining how an application responds to different client requests, typically based on the URL path and HTTP methods (GET, POST, PUT, DELETE, etc.). In a web application, routes determine what content or data is served when a specific endpoint is accessed.
+
+Key Concepts of Route Handling:
+* Routes: Routes are endpoints defined in your application that handle requests to specific paths. Each route specifies a path and an HTTP method to handle a particular type of request.
+
+* Route Handlers: Functions that execute when a route is accessed. They process the request and send a response back to the client.
+
+Example in Express.js:
+Express.js simplifies route handling with its flexible and easy-to-use routing mechanism. Here’s how you can define and handle routes in an Express application:
+
+Step-by-Step Example:
+Setup a Basic Express Server: First, install Express in your project:
+
+npm install express
+Create a File Named app.js and Define Routes:
+
+javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Define a route for GET requests to the root URL (/)
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+// Define a route for GET requests to /about
+app.get('/about', (req, res) => {
+    res.send('About Us');
+});
+
+// Define a route for POST requests to /submit
+app.post('/submit', (req, res) => {
+    res.send('Form Submitted');
+});
+
+// Define a route for PUT requests to /update/:id
+app.put('/update/:id', (req, res) => {
+    res.send(`Update record with ID ${req.params.id}`);
+});
+
+// Define a route for DELETE requests to /delete/:id
+app.delete('/delete/:id', (req, res) => {
+    res.send(`Delete record with ID ${req.params.id}`);
+});
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
+Run the Server: Open your terminal, navigate to the directory containing app.js, and run:
+
+sh
+node app.js
+Access the Routes: Open your web browser and navigate to:
+
+http://localhost:3000/ to see "Hello, World!"
+
+http://localhost:3000/about to see "About Us"
+
+For POST, PUT, and DELETE requests, you can use tools like Postman or cURL.
+
+Explanation:
+app.get('/'): Defines a route for GET requests to the root URL. When a user accesses the root URL, the server responds with "Hello, World!".
+
+app.get('/about'): Defines a route for GET requests to the /about URL. The server responds with "About Us".
+
+app.post('/submit'): Defines a route for POST requests to the /submit URL. The server responds with "Form Submitted".
+
+app.put('/update/:id'): Defines a route for PUT requests to the /update/:id URL. The :id part is a route parameter that captures a dynamic value. The server responds with "Update record with ID {id}".
+
+app.delete('/delete/:id'): Defines a route for DELETE requests to the /delete/:id URL. The server responds with "Delete record with ID {id}".
+
+------------------------------------------------------------------------------------------------------------------------
+
+22) what is RESTful APIs and all process?
+Ans) Building RESTful APIs
+RESTful APIs (Representational State Transfer APIs) are a set of guidelines for creating web services that use HTTP requests to access and manipulate data. They are designed to be stateless and provide a way to structure and manage your web services in a scalable and efficient manner. Here's a step-by-step guide to building RESTful APIs using Node.js and Express:
+
+Step-by-Step Guide
+
+1. Setup Your Project
+First, you need to set up a new Node.jsp roject and install the necessary dependencies.
+
+sh
+mkdir rest-api-project
+cd rest-api-project
+npm init -y
+npm install express body-parser mongoose dotenv
+
+2. Create Your Express Server
+Create a file named server.js and set up a basic Express server.
+
+javascript
+// server.js
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Middleware
+app.use(bodyParser.json());
+
+// Connect to MongoDB
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Home route
+app.get('/', (req, res) => {
+    res.send('Welcome to the RESTful API');
+});
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+
+3. Define Your Data Model
+Create a file named models/Post.js and define a Mongoose schema for your data.
+
+javascript
+// models/Post.js
+const mongoose = require('mongoose');
+
+const PostSchema = mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+module.exports = mongoose.model('Posts', PostSchema);
+
+4. Create Routes
+Create a file named routes/posts.js and define routes for your API.
+
+javascript
+// routes/posts.js
+const express = require('express');
+const router = express.Router();
+const Post = require('../models/Post');
+
+// Get all posts
+router.get('/', async (req, res) => {
+    try {
+        const posts = await Post.find();
+        res.json(posts);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+// Create a new post
+router.post('/', async (req, res) => {
+    const post = new Post({
+        title: req.body.title,
+        description: req.body.description
+    });
+    try {
+        const savedPost = await post.save();
+        res.json(savedPost);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+// Get a specific post
+router.get('/:postId', async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.postId);
+        res.json(post);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+// Delete a post
+router.delete('/:postId', async (req, res) => {
+    try {
+        const removedPost = await Post.remove({ _id: req.params.postId });
+        res.json(removedPost);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+// Update a post
+router.patch('/:postId', async (req, res) => {
+    try {
+        const updatedPost = await Post.updateOne(
+            { _id: req.params.postId },
+            { $set: { title: req.body.title } }
+        );
+        res.json(updatedPost);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+module.exports = router;
+
+5. Integrate Routes into Your Server
+Modify server.js to use the routes you created.
+
+javascript
+// server.js
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Middleware
+app.use(bodyParser.json());
+
+// Connect to MongoDB
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Import routes
+const postsRoute = require('./routes/posts');
+app.use('/posts', postsRoute);
+
+// Home route
+app.get('/', (req, res) => {
+    res.send('Welcome to the RESTful API');
+});
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+
+Running Your API
+Set Up Environment Variables: Create a .env file in your project root with the following content:
+
+plaintext
+DB_CONNECTION=<Your MongoDB Connection String>
+PORT=3000
+Start Your Server:
+
+sh
+node server.js
+Test Your API: Use a tool like Postman or cURL to test the endpoints:
+
+GET /posts: Fetch all posts.
+
+POST /posts: Create a new post.
+
+GET /posts/:postId: Fetch a specific post by ID.
+
+DELETE /posts/:postId: Delete a specific post by ID.
+
+PATCH /posts/:postId: Update a specific post by ID.
+------------------------------------------------------------------------------------------------------------------------
+
+23) explain Error handling and debugging?
+Ans) Error Handling and Debugging in Node.js
+Error handling and debugging are crucial aspects of software development. Proper error handling ensures that your application can gracefully handle unexpected issues, while debugging helps identify and fix problems in your code.
+
+Error Handling
+1. Try-Catch Blocks
+One of the most common ways to handle errors in JavaScript is using try-catch blocks. This method allows you to catch and handle errors gracefully.
+
+javascript
+try {
+    // Code that might throw an error
+    let result = riskyOperation();
+    console.log(result);
+} catch (error) {
+    // Handle the error
+    console.error('An error occurred:', error.message);
+}
+
+2. Error Handling Middleware in Express
+Express.jsallows you to create custom error-handling middleware to manage errors in your web applications.
+
+javascript
+const express = require('express');
+const app = express();
+
+// Middleware to handle routes
+app.get('/', (req, res) => {
+    throw new Error('Something went wrong!');
+});
+
+// Error-handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
+app.listen(3000, () => {
+    console.log('Server running on http://localhost:3000');
+});
+In this example, if an error is thrown in any route, the error-handling middleware catches it and sends a 500 status code with a message.
+
+3. Asynchronous Error Handling
+Handling errors in asynchronous code (such as promises and async/await) requires additional consideration.
+
+Promises:
+
+javascript
+riskyOperation()
+    .then(result => console.log(result))
+    .catch(error => console.error('An error occurred:', error.message));
+Async/Await:
+
+javascript
+async function asyncOperation() {
+    try {
+        let result = await riskyOperation();
+        console.log(result);
+    } catch (error) {
+        console.error('An error occurred:', error.message);
+    }
+}
+
+asyncOperation();
+
+Debugging
+1. Using Console.log
+
+One of the simplest ways to debug is using console.log statements to print variable values and track code execution.
+
+javascript
+console.log('Starting the operation');
+let result = performOperation();
+console.log('Result:', result);
+
+2. Node.js Debugger
+Node.js includes a built-in debugger that you can use to set breakpoints and step through your code.
+
+Start Node.js in Debug Mode:
+
+sh
+node inspect app.js
+Using Chrome DevTools:
+
+Start Node.jswith the --inspect flag:
+
+sh
+node --inspect-brk app.js
+Open chrome://inspect in Google Chrome and click on "Open dedicated DevTools for Node".
+
+Set breakpoints and debug your code using the Chrome DevTools interface.
+
+3. Visual Studio Code Debugger
+VS Code provides excellent debugging support for Node.js.
+
+Open your project in VS Code.
+
+Set breakpoints by clicking in the gutter next to the line numbers.
+
+Run the debugger by clicking the debug icon on the sidebar and pressing the play button.
+
+4. Logging Libraries
+Using logging libraries like Winston or Morgan can help with more advanced logging and debugging.
+
+Winston:
+
+sh
+npm install winston
+javascript
+const winston = require('winston');
+
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    transports: [
+        new winston.transports.File({ filename: 'error.log', level: 'error' }),
+        new winston.transports.File({ filename: 'combined.log' })
+    ]
+});
+
+logger.error('This is an error message');
+logger.info('This is an informational message');
+Morgan:
+
+sh
+npm install morgan
+javascript
+const morgan = require('morgan');
+app.use(morgan('combined'));
+
+------------------------------------------------------------------------------------------------------------------------
+
+24) what is Packet.JOSN ?
+Ans) package.json is a file used in Node.js projects to define metadata about the project, such as the name, version, description, author, and dependencies. It's a standard part of the Node.js ecosystem and is essential for managing and sharing your project.
+------------------------------------------------------------------------------------------------------------------------
+
+25) what is template engines in Express?
+Ans) Template engines are tools that enable you to use static template files in your web application. At runtime, the template engine replaces variables in a template file with actual values and transforms the template into an HTML file sent to the client. This allows for dynamic content rendering in your web applications.
+
+Commonly Used Template Engines with Express:
+* EJS (Embedded JavaScript Templates):
+Simple and powerful, allows you to write JavaScript code directly in your templates.
+
+File extension: .ejs
+Installation: npm install ejs
+
+javascript
+app.set('view engine', 'ejs');
+
+* Pug (formerly Jade):
+Uses a clean, whitespace-sensitive syntax, making it very readable.
+File extension: .pug
+
+Installation: npm install pug
+javascript
+app.set('view engine', 'pug');
+
+* Handlebars (hbs):
+Provides a logicless template syntax, focusing on keeping the templates clean.
+File extension: .hbs
+Installation: npm install hbs
+
+javascript
+app.set('view engine', 'hbs');
+------------------------------------------------------------------------------------------------------------------------
+
+26) what Node.JS single thread?
+Ans) Node.js is single-threaded in the sense that it uses a single main thread to handle all incoming requests and perform JavaScript operations. This design is built around the event-driven architecture, which allows Node.js to handle many connections simultaneously without creating a new thread for each request. Here's a deeper look into what this means and how it works:
+
+Event Loop
+At the core of Node.js's single-threaded model is the event loop. The event loop allows Node.js to perform non-blocking I/O operations by offloading operations to the system's kernel whenever possible. The event loop continuously checks for tasks, executes them, and waits for new tasks to arrive.
+
+Benefits of Single-Threaded Model:
+1) Efficiency: Reduces the overhead associated with creating and managing multiple threads.
+2) Scalability: The non-blocking, asynchronous nature allows handling many connections efficiently.
+3) Simplicity: Avoids common multi-threading issues such as deadlocks and race conditions.
+
+Limitations:
+1)CPU-Intensive Tasks: Node.jsmay not be the best choice for heavy CPU-bound operations because such tasks can block the event loop.
+2)Workarounds Needed: For CPU-intensive work, you might need to use techniques like worker threads, child processes, or external services.
+------------------------------------------------------------------------------------------------------------------------
+
+27) what is event driven program?
+Ans) Event-driven programming is a programming paradigm where the flow of the program is determined by events—such as user actions (mouse clicks, key presses), sensor outputs, or message passing from other programs or threads. It contrasts with traditional procedural programming, where the program flow is determined by a pre-defined sequence of instructions.
+
+Key Concepts of Event-Driven Programming:
+Event:
+
+An event is an occurrence or action that can trigger a response. Examples include a mouse click, a keyboard press, or a message from another part of the program.
+
+Event Listener (or Handler):
+
+An event listener is a function or method that waits for an event to occur and then executes in response. For example, when a user clicks a button, the event listener for that button's click event will execute a predefined function.
+
+Event Loop:
+
+The event loop is a core concept in environments like Node.js, where it continuously checks for events and dispatches them to their respective listeners. It allows the program to perform non-blocking operations.
+------------------------------------------------------------------------------------------------------------------------
+
+28) what is URL and ALL about it?
+Ans) A URL (Uniform Resource Locator) is the address used to access resources on the internet. It specifies the location of a resource and the protocol used to retrieve it. Think of it as the web address that you type into your browser's address bar to visit a website or access a file.
+
+Components of a URL
+A URL typically has several parts, each serving a specific purpose:
+
+* Scheme (Protocol):
+Indicates the protocol used to access the resource (e.g., HTTP, HTTPS, FTP).
+Example: https
+
+* Host (Domain):
+Specifies the server hosting the resource.
+Example: www.example.com
+
+* Port (Optional):
+Specifies the port number on the server to connect to.
+Default ports are 80 for HTTP and 443 for HTTPS.
+Example: :8080
+
+* Path:
+Specifies the specific resource within the server.
+Example: /about/us
+
+* Query String (Optional):
+Provides additional parameters for the resource.
+Starts with a ? and includes key-value pairs separated by &.
+Example: ?id=123&name=JohnDoe
+
+* Fragment (Optional):
+Points to a specific section within the resource.
+Starts with a #.
+Example: #section2
+Example of a Complete URL
+Here’s a breakdown of a complete URL:
+
+https://www.example.com:8080/path/to/resource?id=123&name=JohnDoe#section2
+Scheme (Protocol): https
+
+* Host (Domain): www.example.com
+Port: 8080
+Path: /path/to/resource
+Query String: ?id=123&name=JohnDoe
+Fragment: #section2
+
+Functions of URL Components
+1) Scheme: Defines the protocol for data transfer (e.g., HTTPS for secure web pages).
+2) Host: Identifies the domain name of the server where the resource resides.
+3) Port: Indicates the communication endpoint on the server (often omitted if default).
+4) Path: Directs to the specific file or resource within the server.
+5) Query String: Adds parameters to the request, often used in search queries and dynamic data fetching.
+6) Fragment: Directs to a specific part of a page, like a bookmark or section.
+
+------------------------------------------------------------------------------------------------------------------------
+
+29) database connection node JS to mysql
+Ans)  
+In Express.js, req.body and req.query are two properties of the request object (req) that are used to handle different parts of incoming HTTP requests. Here’s the difference between them:
+
+req.body
+Purpose: Contains the data sent in the body of the request. It is typically used with POST, PUT, or PATCH requests where the client sends data to the server.
+
+Content Type: Often used with JSON, form data, or other payload formats.
+
+Middleware: To access req.body, you need to use middleware such as body-parser or express.json().
+
+Example:
+javascript
+const express = require('express');
+const app = express();
+
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+app.post('/data', (req, res) => {
+    console.log(req.body); // Accessing data sent in the request body
+    res.send('Data received');
+});
+
+app.listen(3000, () => {
+    console.log('Server running at http://localhost:3000');
+});
+
+
+In this example, when a POST request with JSON data is sent to /data, the JSON payload is accessible via req.body.
+
+req.query
+Purpose: Contains the query parameters sent in the URL of the request. It is typically used with GET requests where parameters are appended to the URL.
+
+Format: The query parameters are key-value pairs appended to the URL after a ?.
+
+Access: Directly accessible without additional middleware.
+
+Example:
+javascript
+const express = require('express');
+const app = express();
+
+app.get('/search', (req, res) => {
+    console.log(req.query); // Accessing query parameters
+    res.send('Query received');
+});
+
+app.listen(3000, () => {
+    console.log('Server running at http://localhost:3000');
+});
+In this example, when a GET request is made to /search?term=nodejs&sort=asc, the query parameters (term and sort) are accessible via req.query.
+
+----------------------------------------------------------------------------------------------------------------------
+
+30) MVC (Model-View-Controller) modal ?
+Ans) MVC Model in Node.js
+The MVC (Model-View-Controller) architectural pattern is a popular way to design and structure web applications. It divides the application into three interconnected components, each with a distinct responsibility, promoting separation of concerns and making the codebase more maintainable and scalable. Here’s a detailed look at how MVC works in the context of Node.js:
+
+Components of MVC
+Model:
+
+Represents the data and the business logic of the application.
+
+Responsible for interacting with the database and performing data-related operations.
+
+In a Node.jsapplication, the Model is often implemented using an ORM (Object-Relational Mapping) library like Sequelize, Mongoose (for MongoDB), or plain SQL queries.
+
+View:
+
+Represents the user interface of the application.
+
+Responsible for rendering the data provided by the Controller to the user.
+
+In Node.js, the View is typically implemented using template engines like EJS, Pug, or Handlebars to render dynamic HTML pages.
+
+Controller:
+
+Acts as an intermediary between the Model and the View.
+
+Handles incoming requests, processes the data using the Model, and determines the appropriate View to render.
+
+Ensures that the Model and the View do not interact directly with each other.
+
+Example of MVC in Node.js
+Step-by-Step Guide
+Set Up Your Project:
+
+sh
+mkdir node-mvc-app
+cd node-mvc-app
+npm init -y
+npm install express body-parser mongoose ejs
+Directory Structure:
+
+/node-mvc-app
+├── /controllers
+│   └── userController.js
+├── /models
+│   └── User.js
+├── /views
+│   └── users.ejs
+├── /routes
+│   └── userRoutes.js
+└── app.js
+Create the Model:
+
+User.js (in /models):
+
+javascript
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    }
+});
+
+module.exports = mongoose.model('User', userSchema);
+Create the Controller:
+
+userController.js (in /controllers):
+
+javascript
+const User = require('../models/User');
+
+exports.getUsers = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.render('users', { users });
+    } catch (err) {
+        res.status(500).send('Server Error');
+    }
+};
+
+exports.createUser = async (req, res) => {
+    const { name, email } = req.body;
+    try {
+        const newUser = new User({ name, email });
+        await newUser.save();
+        res.redirect('/users');
+    } catch (err) {
+        res.status(500).send('Server Error');
+    }
+};
+Create the Routes:
+
+userRoutes.js (in /routes):
+
+javascript
+const express = require('express');
+const router = express.Router();
+const userController = require('../controllers/userController');
+
+router.get('/users', userController.getUsers);
+router.post('/users', userController.createUser);
+
+module.exports = router;
+Create the View:
+
+users.ejs (in /views):
+
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <form action="/users" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit">Add User</button>
+    </form>
+    <ul>
+        <% users.forEach(user => { %>
+            <li><%= user.name %> (<%= user.email %>)</li>
+        <% }) %>
+    </ul>
+</body>
+</html>
+Set Up the Express Application:
+
+app.js:
+
+javascript
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const userRoutes = require('./routes/userRoutes');
+
+const app = express();
+const port = 3000;
+
+// Set up view engine
+app.set('view engine', 'ejs');
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/nodeapp', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+// Routes
+app.use('/', userRoutes);
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+Summary
+Model: Represents the data and handles database interactions.
+
+View: Represents the user interface and displays the data.
+
+Controller: Handles user requests, processes data using the Model, and sends the appropriate response using the View.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+31)
+Ans) 
