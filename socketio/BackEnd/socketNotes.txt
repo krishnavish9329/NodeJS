@@ -1,0 +1,10 @@
+
+Q1) What is socket.io with all method ?
+
+on
+emit
+broadcast
+
+
+
+Q2) what is polling?

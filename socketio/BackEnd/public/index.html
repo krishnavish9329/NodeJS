@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socket.io</title>
+</head>
+<body>
+    <div>
+        <h1>chatting</h1>
+        <!-- <button onclick="createServer()">create WS Connection</button> -->
+
+        <input type="text " placeholder="Enter Message" id="Message">
+        <button id="sendbtn">Send</button>
+
+    </div>
+    <div id="add">
+        
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        // function createServer()
+        // {
+        //     const socket = io();
+        // }
+
+        const socket =io();
+        const sendbtn = document.getElementById("sendbtn")
+        const Message = document.getElementById("Message")
+        const add = document.getElementById("add");
+
+        socket.on("message", message=>{
+            const p = document.createElement("p");
+            p.innerHTML = message;
+            add.appendChild(p);
+             
+        })
+
+        sendbtn.addEventListener("click",(e)=>{
+            const Mess = Message.value;
+            console.log(Mess);
+
+            socket.emit("User-message",Mess);
+        })
+
+    </script>
+    
+</body>
+</html>

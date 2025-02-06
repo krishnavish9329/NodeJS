@@ -1,0 +1,37 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.div
+{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px
+}
+.input{
+    border: 2px solid;
+    height: 27px;
+    width: 221px;
+    font-size: 17px;
+    border-radius: 7px;
+}
+
+#subbut{
+    width: 107px;
+    height: 27px;
+    border-radius: 7px;
+    transition: background 2s ease-out;
+}
+
+#subbut:hover{
+   
+    background-color: black;
+    color: white;
+    transition: background 0.6s ease-out;
+}
