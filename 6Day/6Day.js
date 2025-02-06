@@ -24,7 +24,7 @@
 
 const express = require('express')
 const mymid =require('./6Day_middlewear/6day_middlewear');
-const e = require('express');
+const express = require('express');
 const app = express();
 
 
