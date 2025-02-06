@@ -37,7 +37,7 @@ console.log( calc.operation.diviton(10,4));
 //------Child Process modules -------------------
 
 // child process is a node module to creat sub process within a script
-// you can perform different tasks withis your script by using some method
+// you can perform different tasks within your script by using some method
  
 /*such as write in cmp sortcut like 
 calc -> to open to calaculeter 

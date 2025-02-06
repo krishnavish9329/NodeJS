@@ -41,7 +41,7 @@ app.get('/',(req,res)=>{
 
 app.delete('/cours/:id',(req,res)=>{
     let courses  = course.find(courses => courses.id === parseInt(req.params.id));
-    if(!courses)res.send("the course you looking fro does not exist");
+    if(!courses)res.send("the course you looking for does not exist");
     let index = course.indexOf(courses);
     course.splice(index,1);
     res.send(courses);

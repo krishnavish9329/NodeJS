@@ -58,7 +58,7 @@ app.get('/courses/:id',(req,res)=>{
     let courses  = course.find(course => course.id === parseInt(req.params.id));
     if(!courses)
     {
-        res.send("the course you looking fro does not exist");
+        res.send("the course you looking for does not exist");
     }
     res.send(courses);
 })
