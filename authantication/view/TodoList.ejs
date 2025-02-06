@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=">
+    <title>show form</title>
+</head>
+<body>
+
+    <form action="/Notes" method="post">
+        <h1>Notes</h1>
+        <textarea name="notes" id=""></textarea>
+        <button type="submit">Add Notes</button>
+    </form>
+    <br>
+
+    <% if(data.length > 0) {%>
+    <table>
+        
+        <% for(let i =0 ;i<data.length; i++) { %>
+        <tr>
+            <td>Notes <% i %></td>
+            <td><%- data[i].Note %></td>
+        </tr>
+        <% } %>
+    </table>
+    <%} else {%>
+        <h>sorry i have not any notes please write one notes </h>
+    <% }%>
+</body>
+</html>
